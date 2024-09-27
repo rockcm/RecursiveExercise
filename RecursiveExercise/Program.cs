@@ -15,7 +15,7 @@ Console.WriteLine($"The single digit result is: {result}");
     
 
    
-    static int ReduceToSingleDigit(int number)
+static int ReduceToSingleDigit(int number)
 {
     //base
     if (number < 10)
