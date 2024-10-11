@@ -29,8 +29,6 @@ static int ReduceToSingleDigit(int number)
     // extract the last digit using mod instead of string manipulation which is likely slower
     int lastDigit = number % 10;       // get the last digit
     int remainingDigits = number / 10; // remove the last digit and keep remaining 
-
-    //try parse better for user input
    
     // add last digit to the remaining 
     int sum = lastDigit + remainingDigits;
