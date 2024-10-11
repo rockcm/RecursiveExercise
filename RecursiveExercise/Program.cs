@@ -1,39 +1,40 @@
-﻿Console.WriteLine("Enter the first number: ");
+
+// user enters first number 
+Console.WriteLine("Enter the first number: ");
 int number1 = int.Parse(Console.ReadLine());
 
+// user enters second number 
 Console.WriteLine("Enter the second number: ");
 int number2 = int.Parse(Console.ReadLine());
 
-
+//add numbers together 
 int sum = number1 + number2;
 
-
+// call method to reduce 
 int result = ReduceToSingleDigit(sum);
 
-
+// print result
 Console.WriteLine($"The single digit result is: {result}");
-    
 
-   
+
+// method to reduce number to single digit 
 static int ReduceToSingleDigit(int number)
 {
-    //base
+    // if number is already single digit return
     if (number < 10)
     {
         return number;
     }
 
-    
-    string numberString = number.ToString();
-    char lastDigitChar = numberString[numberString.Length - 1];
+    // extract the last digit using mod instead of string manipulation which is likely slower
+    int lastDigit = number % 10;       // get the last digit
+    int remainingDigits = number / 10; // remove the last digit and keep remaining 
 
-  
-    int lastDigit = int.Parse(lastDigitChar.ToString());
-    int remainingDigits = number / 10; 
-
+    //try parse better for user input
    
+    // add last digit to the remaining 
     int sum = lastDigit + remainingDigits;
 
-  
+    // recursively reduce to single digit 
     return ReduceToSingleDigit(sum);
 }
